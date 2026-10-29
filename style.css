@@ -1,0 +1,427 @@
+
+/* =================================
+   LITTLE DREAM - CADASTRO KAWAII
+   ================================= */
+
+:root {
+    --bordo: #640003;
+    --azul: #21304D;
+    --azul-profundo: #172239;
+    --creme: #FFF9F5;
+    --bege: #F1E8E2;
+    --branco: #FFFFFF;
+    --rosa-detalhe: #E8B8C8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--azul-profundo);
+}
+
+
+   
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 20px 20px;
+    position: relative;
+    overflow: hidden;
+
+    /* Fundo vermelho bem clarinho */
+ background-color: #F7F0E8;
+
+    /* Quadriculado delicado em vermelho claro */
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 48%,
+            rgba(220, 105, 105, 0.13) 48%,
+            rgba(220, 105, 105, 0.13) 63%,
+            transparent 63%
+        ),
+        linear-gradient(
+            transparent 48%,
+            rgba(220, 105, 105, 0.13) 48%,
+            rgba(220, 105, 105, 0.13) 63%,
+            transparent 63%
+        );
+
+    background-size: 125px 125px;
+}
+
+
+/* Estrelinhas decorativas */
+
+.decor {
+    position: absolute;
+    z-index: 0;
+    color: var(--bordo);
+    opacity: 0.75;
+    animation: flutuar 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.decor-one {
+    top: 9%;
+    left: 12%;
+    font-size: 55px;
+}
+
+.decor-two {
+    top: 20%;
+    right: 13%;
+    font-size: 65px;
+    animation-delay: 0.7s;
+}
+
+.decor-three {
+    bottom: 14%;
+    left: 15%;
+    font-size: 45px;
+    animation-delay: 1.2s;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+/* Cartão principal */
+
+.signup-card {
+    width: 100%;
+    max-width: 455px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    background-color: var(--branco);
+    border: 2px solid var(--azul-profundo);
+    border-radius: 24px;
+
+    box-shadow: 9px 10px 0 var(--azul-profundo);
+
+    animation: aparecer 0.8s ease both;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Barra superior estilo janela retrô */
+
+.top-bar {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 17px;
+
+    background-color: var(--azul);
+    color: var(--branco);
+
+    border-bottom: 2px solid var(--azul-profundo);
+}
+
+.top-bar p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.window-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.window-dots span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: var(--creme);
+    border: 1px solid var(--azul-profundo);
+}
+
+.window-dots span:nth-child(2) {
+    background-color: var(--rosa-detalhe);
+}
+
+.window-dots span:nth-child(3) {
+    background-color: var(--branco);
+}
+
+.heart {
+    font-size: 20px;
+    color: var(--rosa-detalhe);
+}
+
+/* Conteúdo do cadastro */
+
+.card-content {
+    padding: 30px 32px 25px;
+    text-align: center;
+    position: relative;
+}
+
+.sticker {
+    width: 58px;
+    height: 43px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bege);
+    color: var(--bordo);
+
+    border: 2px solid var(--azul-profundo);
+    border-radius: 15px;
+
+    box-shadow: 3px 4px 0 var(--azul-profundo);
+
+    font-size: 30px;
+    transform: rotate(-5deg);
+}
+
+.eyebrow {
+    margin-bottom: 9px;
+    color: var(--bordo);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family: "Fredoka", sans-serif;
+    color: var(--bordo);
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.subtitle {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--azul);
+}
+
+/* Campos do formulário */
+
+form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 17px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--azul-profundo);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.input-group input {
+    display: block;
+    width: 100%;
+    min-height: 49px;
+    padding: 13px 15px;
+
+    background-color: var(--bege);
+    color: var(--azul-profundo);
+
+    border: 2px solid var(--azul-profundo);
+    border-radius: 13px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.input-group input::placeholder {
+    color: #6F7480;
+    opacity: 1;
+}
+
+.input-group input:focus {
+    background-color: var(--branco);
+    border-color: var(--bordo);
+    box-shadow: 0 0 0 3px rgba(100, 0, 3, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Aceite dos termos */
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 5px 0 20px;
+
+    color: var(--azul);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.terms input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--bordo);
+    cursor: pointer;
+}
+
+/* Botão principal */
+
+.signup-button {
+    width: 100%;
+    min-height: 53px;
+    padding: 14px;
+
+    background-color: var(--bordo);
+    color: var(--branco);
+
+    border: 2px solid var(--azul-profundo);
+    border-radius: 15px;
+    box-shadow: 4px 5px 0 var(--azul-profundo);
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.signup-button:hover {
+    background-color: var(--azul);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 3px 0 var(--azul-profundo);
+}
+
+.signup-button:active {
+    transform: translate(4px, 5px);
+    box-shadow: none;
+}
+
+/* Link de login */
+
+.login-link {
+    margin-top: 25px;
+    color: var(--azul-profundo);
+    font-size: 12px;
+}
+
+.login-link a {
+    color: var(--bordo);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.login-link a:hover {
+    color: var(--azul);
+}
+
+/* Detalhes inferiores */
+
+.bottom-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 23px;
+    padding-top: 16px;
+
+    border-top: 1px dashed var(--rosa-detalhe);
+
+    color: var(--bordo);
+    font-size: 17px;
+}
+
+.bottom-decoration span:nth-child(2),
+.bottom-decoration span:nth-child(4) {
+    color: var(--azul);
+}
+
+.footer-note {
+    position: relative;
+    z-index: 1;
+    margin-top: 25px;
+
+    color: var(--bordo);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* Adaptação para celulares */
+
+@media (max-width: 480px) {
+    .page {
+        padding: 30px 22px 20px;
+        background-size: 90px 90px;
+    }
+
+    .signup-card {
+        border-radius: 20px;
+        box-shadow: 6px 7px 0 var(--azul-profundo);
+    }
+
+    .card-content {
+        padding: 25px 20px 22px;
+    }
+
+    .decor-one {
+        left: 3%;
+        font-size: 38px;
+    }
+
+    .decor-two {
+        right: 3%;
+        font-size: 45px;
+    }
+
+    .decor-three {
+        left: 4%;
+        font-size: 32px;
+    }
+
+    .top-bar {
+        padding: 11px 13px;
+    }
+}
